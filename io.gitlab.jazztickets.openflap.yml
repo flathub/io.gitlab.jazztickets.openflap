@@ -20,5 +20,5 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://gitlab.com/jazztickets/uploads/-/raw/main/openflap-1.0.5r72-src.tar.gz
-        sha256: 9f01afda6b1da4d1c90f0e41711cadbf4181459e217c985e6c108162fe13b199
+        url: https://gitlab.com/jazztickets/uploads/-/raw/main/openflap-1.0.6r76-src.tar.gz
+        sha256: de41910d764659bac967316a93af7ac0d411fd645f181c21e3b405b8b5a554a8

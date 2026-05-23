@@ -1,17 +1,28 @@
 {
 	"app-id": "io.gitlab.jazztickets.openflap",
 	"runtime": "org.freedesktop.Platform",
-	"runtime-version": "24.08",
+	"runtime-version": "25.08",
 	"sdk": "org.freedesktop.Sdk",
 	"command": "openflap",
 	"rename-desktop-file": "openflap.desktop",
 	"rename-icon": "openflap",
 	"rename-appdata-file": "openflap.xml",
+	"finish-args": [
+		"--device=all",
+		"--share=ipc",
+		"--socket=fallback-x11",
+		"--socket=pulseaudio",
+		"--socket=wayland"
+	],
 	"modules": [
+		"shared-modules/SDL2/SDL2_image.json",
+		"shared-modules/SDL2/SDL2_ttf.json",
 		{
 			"name": "openflap",
 			"buildsystem": "cmake-ninja",
-			"builddir": true,
+			"cleanup": [
+				"/share/doc"
+			],
 			"sources": [
 				{
 					"type": "archive",
@@ -20,12 +31,5 @@
 				}
 			]
 		}
-	],
-	"finish-args": [
-		"--device=all",
-		"--share=ipc",
-		"--socket=fallback-x11",
-		"--socket=pulseaudio",
-		"--socket=wayland"
 	]
 }
